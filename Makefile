@@ -24,7 +24,7 @@ lint:
 	env GO111MODULE=on golint -set_exit_status $(ALL_PACKAGES)
 
 test: fmt vet build
-	GO111MODULE=on ENVIRONMENT=test go test -race ./...
+	GO111MODULE=on ENVIRONMENT=test go test -v -race ./...
 
 coverage:
 	GO111MODULE=on ENVIRONMENT=test goveralls -service=travis-ci
